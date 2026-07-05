@@ -127,6 +127,35 @@
   }
   .step-sub strong { color: var(--nh-black); font-weight: 600; }
 
+  .credit-callout {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--nh-blue-soft);
+    border: 1.5px solid var(--nh-blue);
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin: 0 0 22px;
+  }
+  .credit-callout-amt {
+    font-family: 'Fraunces', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--nh-black);
+    line-height: 1;
+    flex: none;
+  }
+  .credit-callout-text {
+    font-size: 14px;
+    color: var(--nh-text);
+    line-height: 1.4;
+  }
+  .credit-callout-text strong { color: var(--nh-black); }
+  @media (max-width: 540px) {
+    .credit-callout-amt { font-size: 26px; }
+    .credit-callout-text { font-size: 13px; }
+  }
+
   .text-input {
     width: 100%;
     padding: 16px 18px;
@@ -695,16 +724,20 @@
   <img class="brand-logo" src="https://rick895.github.io/sage/NaturalHounds.png" alt="Natural Hounds Dog Food Co." width="100" height="100">
 
   <div class="credit-ribbon" id="ribbon">
-    <span class="chip">$25 CREDIT</span>
-    <span>waiting for you at the end</span>
+    <span class="chip">BONUS</span>
+    <span>$25 store credit when you finish</span>
   </div>
 
   <div class="progress-track"><div class="progress-fill" id="progress"></div></div>
 
   <!-- Step: intro + dog name -->
   <section class="step active" data-step="name">
-    <h1>Get <em style="font-style:normal; border-bottom:3px solid var(--nh-blue);">$25 in store credit</em> + your dog's exact feeding plan</h1>
-    <p class="step-sub">Answer 3 quick questions about your pup. We'll build their plan — exactly how much to feed and what it costs — and load <strong>$25 of credit</strong> onto your account to use on your first box.</p>
+    <h1>See what fresh food would <em style="font-style:normal; border-bottom:3px solid var(--nh-blue);">actually cost</em> for your dog</h1>
+    <p class="step-sub">Answer 3 quick questions and we'll show you the real monthly cost — plus exactly how much to feed. Big dogs and multi-dog homes, we'll factor in your savings.</p>
+    <div class="credit-callout">
+      <span class="credit-callout-amt">+ $25</span>
+      <span class="credit-callout-text"><strong>store credit</strong> just for finishing — applied to your first box</span>
+    </div>
     <label class="step-eyebrow" for="dog-name-input" id="name-label">What's your dog's name?</label>
     <input class="text-input" type="text" id="dog-name-input" placeholder="e.g. Bella" autocomplete="off" maxlength="30">
     <button class="next-btn" id="name-next">Start my plan →</button>
